@@ -128,7 +128,6 @@ requests-toolbelt==1.0.0
     # via langsmith
 rich==13.9.4
     # via typer
-ruff==0.7.4
 s3transfer==0.10.3
     # via boto3
 shellingham==1.5.4
