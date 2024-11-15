@@ -1,9 +1,13 @@
 [project]
-name = "playground-ml"
+name = "playground"
 version = "0.1.0"
 description = ""
 authors = []
-dependencies = []
+dependencies = [
+    "langchain>=0.3.7",
+    "langchain-aws>=0.2.7",
+    "langserve>=0.3.0",
+]
 readme = "README.md"
 requires-python = ">= 3.12"
 
@@ -14,16 +18,10 @@ build-backend = "hatchling.build"
 [tool.rye]
 managed = true
 virtual = true
-dev-dependencies = [
-    "ruff>=0.7.4",
-    "langchain-cli>=0.0.31",
-]
-
-[tool.rye.workspace]
-members = ["playground"]
+dev-dependencies = []
 
 [tool.hatch.metadata]
 allow-direct-references = true
 
 [tool.hatch.build.targets.wheel]
-packages = ["src/playground_ml"]
+packages = ["src/playground"]
