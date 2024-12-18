@@ -2,6 +2,7 @@ import uvicorn
 from fastapi import FastAPI
 from langchain_aws import ChatBedrock
 from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
+from langchain_core.output_parsers import StrOutputParser
 from langserve import add_routes
 
 DEFAULT_MODEL_ID = "anthropic.claude-3-5-sonnet-20240620-v1:0"
@@ -16,7 +17,7 @@ prompt = ChatPromptTemplate.from_messages(
     ]
 )
 
-chain = prompt | chat
+chain = prompt | chat | StrOutputParser()
 
 add_routes(app, chain, playground_type="chat")
 
